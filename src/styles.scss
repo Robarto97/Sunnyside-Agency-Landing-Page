@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap");
+// Primary
+$softRed: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$graphicDesignColor: hsl(167, 40%, 24%);
+$photographyColor: hsl(198, 62%, 26%);
+$footerColor: hsl(168, 34%, 41%);
+// Neutral
+$veryDarkDesBlue: hsl(212, 27%, 19%);
+$veryDarkGrayBlue: hsl(213, 9%, 39%);
+$darkGrayBlue: hsl(232, 10%, 55%);
+$grayBlue: hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+// font-family: 'Fraunces', serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Barlow", sans-serif;
+  background-image: url(images/desktop/image-header.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+// Header
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3rem;
+  .logo {
+    width: 15%;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    li {
+      display: block;
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+      #contact {
+        font-family: "Fraunces", serif;
+        color: $veryDarkDesBlue;
+        text-transform: uppercase;
+        background-color: $white;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        transition: all 0.5s ease;
+      }
+      #contact:hover {
+        background-color: hsl(200, 100%, 72%);
+        color: $white;
+      }
+    }
+  }
+}
+
+// Title
+.title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-top: 4rem;
+  h1 {
+    color: $white;
+    text-transform: uppercase;
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    letter-spacing: 10px;
+    font-size: 4rem;
+  }
+}
+
+// Main Content
+main {
+  min-height: 100vh;
+  margin-top: 23%;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 85vh);
+    position: relative;
+    article {
+      background-repeat: no-repeat;
+      background-size: cover;
+      // overflow: hidden;
+      // width: 100%;
+    }
+    article:first-of-type,
+    article:nth-of-type(4) {
+      display: flex;
+      .text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0 auto;
+        width: 65%;
+        h2 {
+          font-family: "Fraunces", serif;
+          font-weight: 900;
+          font-size: 3rem;
+          line-height: 1.2;
+          color: $veryDarkDesBlue;
+        }
+        p {
+          color: $darkGrayBlue;
+          line-height: 1.5;
+          font-size: 1.23rem;
+        }
+        .learn-more {
+          text-decoration: none;
+          color: $veryDarkDesBlue;
+          text-transform: uppercase;
+          font-family: "Fraunces", serif;
+          font-weight: 900;
+          letter-spacing: 1px;
+          width: 30%;
+          border: none;
+          outline: none;
+          background-color: unset;
+          font-size: 1.05rem;
+          position: relative;
+          padding: 0.25rem 0.5rem;
+          cursor: pointer;
+        }
+        .learn-more::after {
+          content: "";
+          height: 38%;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 10px;
+          opacity: 0.2;
+          position: absolute;
+          display: block;
+          background-color: $yellow;
+          z-index: -1;
+          transition: opacity 0.5s ease;
+        }
+
+        .learn-more:hover::after {
+          opacity: 1;
+        }
+      }
+    }
+    article:nth-of-type(2) {
+      background-image: url(images/desktop/image-transform.jpg);
+    }
+    article:nth-of-type(3) {
+      background-image: url(images/desktop/image-stand-out.jpg);
+    }
+    article:nth-of-type(4) {
+      .learn-more:last-of-type::after {
+        background-color: $softRed;
+      }
+    }
+    article:nth-of-type(5) {
+      background-image: url(images/desktop/image-graphic-design.jpg);
+      .bottom-text {
+        color: $graphicDesignColor;
+      }
+    }
+    article:nth-of-type(6) {
+      background-image: url(images/desktop/image-photography.jpg);
+      .bottom-text {
+        color: $photographyColor;
+      }
+    }
+    article:nth-of-type(5),
+    article:nth-of-type(6) {
+      display: flex;
+      align-items: flex-end;
+      .bottom-text {
+        width: 50%;
+        margin: 0 auto 3.5rem;
+        text-align: center;
+        h2 {
+          font-family: "Fraunces", serif;
+          margin-bottom: 2rem;
+          font-size: 2.2rem;
+        }
+        p {
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+  .clients {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    h2 {
+      text-align: center;
+      font-family: "Fraunces", serif;
+      color: $grayBlue;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 1.75rem;
+      font-weight: 900;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 80%;
+      .client {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        padding: 1rem 1.5rem;
+        .client-img {
+          border-radius: 50%;
+          overflow: hidden;
+          width: 25%;
+          img {
+            width: 100%;
+            display: block;
+          }
+        }
+        .review {
+          text-align: center;
+          color: $veryDarkGrayBlue;
+          line-height: 1.6;
+        }
+        .introduction {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+          .name {
+            font-family: "Fraunces", serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+          }
+          .role {
+            color: $grayBlue;
+          }
+        }
+      }
+    }
+  }
+  .pictures {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 65vh;
+    .picture {
+      background-image: url(images/desktop/image-gallery-milkbottles.jpg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    .picture:nth-of-type(2) {
+      background-image: url(images/desktop/image-gallery-orange.jpg);
+    }
+    .picture:nth-of-type(3) {
+      background-image: url(images/desktop/image-gallery-cone.jpg);
+    }
+    .picture:nth-of-type(4) {
+      background-image: url(images/desktop/image-gallery-sugarcubes.jpg);
+    }
+  }
+}
+// Footer
+footer {
+  min-height: 35vh;
+  background-color: hsl(167, 44%, 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 4rem 0;
+  .logo {
+    mask-image: url(images/logo.svg);
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+    background-color: $footerColor;
+    height: 7vh;
+    width: 15%;
+  }
+  nav {
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+      align-items: center;
+      li {
+        a {
+          text-decoration: none;
+          color: $footerColor;
+          transition: color 0.5s ease;
+        }
+        a:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+  .icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1.75rem;
+    align-items: flex-start;
+    margin-top: 3rem;
+    .icon {
+      a {
+        img {
+          width: 100%;
+          display: block;
+          transition: filter 0.5s ease;
+        }
+      }
+      a:hover img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
